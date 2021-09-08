@@ -2,7 +2,7 @@
 import React from 'react'
 //引入reactDOM
 import ReactDOM from 'react-dom'
-//
+import './styles/index.scss'
 //引入App组件
 import App from './App'
 
