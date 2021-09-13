@@ -20,6 +20,7 @@ interface BaseButtonProps {
     href?: string;
 }
 
+//把原先标签上可以添加的props都给集合在一起，包括自己定义的和系统定义的
 type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
