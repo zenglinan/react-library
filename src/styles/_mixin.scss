@@ -1,3 +1,4 @@
+//@mixin命令可以定义一个代码块
 @mixin button-size($padding-y, $padding-x, $font-size, $border-raduis) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
@@ -47,16 +48,19 @@
   .zoom-in-#{$direction}-enter-active {
     opacity: 1;
     transform: $scaleEnd;
-    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms !important;
+
     transform-origin: $origin
   }
   .zoom-in-#{$direction}-exit {
     opacity: 1;
+
   }
   .zoom-in-#{$direction}-exit-active {
     opacity: 0;
     transform: $scaleStart;
-    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms  !important;
+
     transform-origin: $origin;
   }
 }

@@ -1,0 +1,6 @@
+//将主题色和定义的主题色进行匹配
+@each $key,$val in $theme-colors {
+    .icon-#{$key} {
+        color:$val;
+    }
+}

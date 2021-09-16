@@ -1,5 +1,9 @@
+//@import用来插入外部文件
 @import 'variables';
 @import 'reboot';
 @import 'mixin';
+@import 'animation';
 @import '../components/Button/style';
-@import '../components/Menu/style'
+@import '../components/Menu/style';
+@import '../components/Icon/style' ;
+@import '../components/Test/style';

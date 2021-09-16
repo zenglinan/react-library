@@ -1,14 +1,25 @@
-import React from 'react'
-import Button, { ButtonType, ButtonSize } from './components/Button'
+import React, { useState } from 'react'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import Button from './components/Button'
 import Menu from './components/Menu'
 import MenuItem from './components/Menu/MenuItem'
 import SubMenu from './components/Menu/SubMenu'
+import Icon from './components/Icon'
+import Test from './components/Test'
+import Transition from './components/Transition'
 
+library.add(fas)
 const App: React.FC = () => {
+  const [show, setShow] = useState(false)
   return (
     <div className="App">
+
+      <Test />
+
       <header className="App-header">
-        <Menu >
+        <Icon icon='coffee' theme='danger' />
+        <Menu  >
           <MenuItem >
             5555
           </MenuItem>
@@ -31,15 +42,31 @@ const App: React.FC = () => {
             22222
           </MenuItem>
         </Menu>
-        <Button onClick={() => { alert("haha") }}>Hello</Button>
-        <Button disabled >Disabled Button</Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>Large Primary</Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Small} >Small Danger</Button>
-        <Button btnType={ButtonType.Link} href='http://www.baidu.com'>Baidu Link</Button>
-        <Button btnType={ButtonType.Link} disabled href='http://www.baidu.com'>Baidu Link</Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload
-        </p>
+        <Button size='lg' onClick={() => { setShow(!show) }}>Toggle</Button>
+        <Transition wrapper={false} in={show} timeout={300} animation='zoom-in-top'>
+          <div>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload
+            </p>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload
+            </p>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload
+            </p>
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload
+            </p>
+            <Button btnType='primary' size='lg'>Large Primary</Button>
+
+          </div>
+        </Transition>
+        {/* <Button disabled >Disabled Button</Button>
+        <Button btnType='primary' size='lg'>Large Primary</Button>
+        <Button btnType='danger' size='sm' >Small Danger</Button>
+        <Button btnType='link' href='http://www.baidu.com'>Baidu Link</Button>
+        <Button btnType='link' disabled href='http://www.baidu.com'>Baidu Link</Button> */}
+
       </header>
     </div>
   )
