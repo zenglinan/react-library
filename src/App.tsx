@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
 import Button from './components/Button'
 import Menu from './components/Menu'
 import MenuItem from './components/Menu/MenuItem'
@@ -8,8 +6,8 @@ import SubMenu from './components/Menu/SubMenu'
 import Icon from './components/Icon'
 import Test from './components/Test'
 import Transition from './components/Transition'
+import Input from './components/Input'
 
-library.add(fas)
 const App: React.FC = () => {
   const [show, setShow] = useState(false)
   return (
@@ -45,27 +43,18 @@ const App: React.FC = () => {
         <Button size='lg' onClick={() => { setShow(!show) }}>Toggle</Button>
         <Transition wrapper={false} in={show} timeout={300} animation='zoom-in-top'>
           <div>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload
-            </p>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload
-            </p>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload
-            </p>
+            <Button disabled >Disabled Button</Button>
+            <Button btnType='primary' size='lg'>Large Primary</Button>
+            <Button btnType='danger' size='sm' >Small Danger</Button>
+            <Button btnType='link' href='http://www.baidu.com'>Baidu Link</Button>
+            <Button btnType='link' disabled href='http://www.baidu.com'>Baidu Link</Button>
             <p>
               Edit <code>src/App.tsx</code> and save to reload
             </p>
             <Button btnType='primary' size='lg'>Large Primary</Button>
-
           </div>
         </Transition>
-        {/* <Button disabled >Disabled Button</Button>
-        <Button btnType='primary' size='lg'>Large Primary</Button>
-        <Button btnType='danger' size='sm' >Small Danger</Button>
-        <Button btnType='link' href='http://www.baidu.com'>Baidu Link</Button>
-        <Button btnType='link' disabled href='http://www.baidu.com'>Baidu Link</Button> */}
+        <Input placeholder='请输入内容' icon='search' defaultValue='google' prepend='http://' style={{ width: '300px', }}></Input>
 
       </header>
     </div>
