@@ -7,9 +7,11 @@ import Icon from './components/Icon'
 import Test from './components/Test'
 import Transition from './components/Transition'
 import Input from './components/Input'
+import SimpleComplete from './components/AutoComplete/test'
 
 const App: React.FC = () => {
   const [show, setShow] = useState(false)
+
   return (
     <div className="App">
 
@@ -56,6 +58,7 @@ const App: React.FC = () => {
         </Transition>
         <Input placeholder='请输入内容' icon='search' defaultValue='google' prepend='http://' style={{ width: '300px', }}></Input>
 
+        <SimpleComplete />
       </header>
     </div>
   )
