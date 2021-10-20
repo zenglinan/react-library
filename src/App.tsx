@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Button from './components/Button'
-import Menu from './components/Menu'
+import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/MenuItem'
 import SubMenu from './components/Menu/SubMenu'
 import Icon from './components/Icon'
@@ -9,7 +9,6 @@ import Test from './components/Test'
 import Transition from './components/Transition'
 import Input from './components/Input'
 import SimpleComplete from './components/AutoComplete/test'
-import Upload from './components/Upload'
 
 const App: React.FC = () => {
   const [show, setShow] = useState(false)

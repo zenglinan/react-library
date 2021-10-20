@@ -1,0 +1,23 @@
+import React, { FC, CSSProperties } from 'react';
+declare type MenuMode = 'horizontal' | 'vertical';
+export interface MenuProps {
+    /**默认 active 的菜单项的索引值 */
+    defaultIndex?: string;
+    className?: string;
+    /**菜单类型 横向或者纵向 */
+    mode?: MenuMode;
+    style?: CSSProperties;
+    /**点击菜单项触发的回掉函数 */
+    onSelect?: (selectedKey: string) => void;
+    /**设置子菜单的默认打开 只在纵向模式下生效 */
+    defaultOpenSubMenus?: string[];
+}
+interface IMenuContext {
+    index?: string;
+    onSelect?: (selecteIndex: string) => void;
+    mode?: MenuMode;
+    defaultOpenSubMenus?: string[];
+}
+export declare const MenuContext: React.Context<IMenuContext>;
+export declare const Menu: FC<MenuProps>;
+export default Menu;
